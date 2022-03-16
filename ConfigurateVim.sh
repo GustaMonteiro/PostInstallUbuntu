@@ -34,9 +34,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 source /home/$USER/.bashrc
 
-nvm install v13.6.0
+# nvm install v13.6.0
 
 cd /home/$USER/.vim/pack/coc/start
 git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
 
-cd /home/$USER/.vim
+echo "To finish, close this terminal, open a new one and type 'nvm install v13.6.0'"
