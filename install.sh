@@ -2,8 +2,12 @@
 touch ~/.vimrc
 
 mkdir -p ~/.vim/pack/git-plugins/start/
-cd ~/.vim/pack/git-plugins/start/
+mkdir -p ~/.vim/pack/coc/start
+mkdir ~/.fonts
+cp .vimrc ~
+cp coc.nvimrc ~/.vim
 
+cd ~/.vim/pack/git-plugins/start/
 git clone https://github.com/mhinz/vim-startify
 git clone https://github.com/rafi/awesome-vim-colorschemes
 git clone https://github.com/Yggdroot/indentLine
@@ -16,12 +20,7 @@ git clone https://github.com/preservim/nerdcommenter
 git clone https://github.com/dense-analysis/ale
 git clone https://github.com/sheerun/vim-polyglot
 
-cd .
-cp .vimrc ~
-
-cd ~
-mkdir .fonts
-cd .fonts
+cd ~/.fonts
 
 wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.otf
 
@@ -37,6 +36,7 @@ source ~/.bashrc
 
 nvm install v13.6.0
 
-mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
 git clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
+
+cd ~/.vim
