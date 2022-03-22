@@ -18,6 +18,15 @@ LISTA_PROGRAMAS_APT=(
 LISTA_PROGRAMAS_SNAP=(
 	spotify
 	notion-snap
+	photogimp
+)
+
+LISTA_PROGRAMAS_SNAP_CLASSIC=(
+	code
+)
+
+LISTA_PROGRAMAS_DEB=(
+	https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 )
 
 LISTA_PROGRAMAS_SNAP_CLASSIC=(
