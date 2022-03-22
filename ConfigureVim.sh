@@ -35,7 +35,7 @@ criar_diretorios
 copiar_arquivos_configuracao
 clonar_repositorios_git
 
-wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.otf -P $DIRETORIO_FONTS
+wget -c https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.otf -P $DIRETORIO_FONTS
 
 fc-cache
 
@@ -43,5 +43,9 @@ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 source $HOME/.bashrc
+
+bash
+
+nvm install v13.6.0
 
 echo "To finish, close this terminal, open a new one and type 'nvm install v13.6.0'"
