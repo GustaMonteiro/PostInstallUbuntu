@@ -1,13 +1,14 @@
 #!/bin/bash
 
 DIRETORIO_DOWNLOADS="$HOME/Downloads/postinstallprograms"
-URL_GOOGLE_CHROME="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
 LISTA_PROGRAMAS_APT=(
 	gcc
 	git
 	vim
 	curl
+	snapd
+	wget
 	dconf-editor
 	gnome-tweaks
 	chrome-gnome-shell
@@ -16,6 +17,14 @@ LISTA_PROGRAMAS_APT=(
 
 LISTA_PROGRAMAS_SNAP=(
 	spotify
+)
+
+LISTA_PROGRAMAS_SNAP_CLASSIC=(
+	code
+)
+
+LISTA_PROGRAMAS_DEB=(
+	https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 )
 
 remover_locks () {
@@ -41,7 +50,9 @@ atualizar_tudo () {
 
 baixar_pacotes_deb () {
 	[[ ! -d "$DIRETORIO_DOWNLOADS" ]] && mkdir "$DIRETORIO_DOWNLOADS"
-	wget "$URL_GOOGLE_CHROME" -P "$DIRETORIO_DOWNLOADS"
+	for url in ${LISTA_PROGRAMAS_DEB[@]}; do
+		wget -c $url -P "$DIRETORIO_DOWNLOADS"
+	done
 }
 
 instalar_pacotes_deb () {
@@ -61,6 +72,12 @@ instalar_pacotes_snap () {
 	done
 }
 
+instalar_pacotes_snap_classic () {
+	for pacote in ${LISTA_PROGRAMAS_SNAP_CLASSIC[@]}; do
+		sudo snap install $pacote --classic
+	done
+}
+
 instalar_qogir_theme() {
 	git -C $DIRETORIO_DOWNLOADS clone https://github.com/vinceliuice/Qogir-theme.git
 	bash $DIRETORIO_DOWNLOADS/Qogir-theme/install.sh
@@ -71,6 +88,7 @@ adicionar_arquitetura_i386
 atualizar_tudo
 instalar_pacotes_apt
 instalar_pacotes_snap
+instalar_pacotes_snap_classic
 baixar_pacotes_deb
 instalar_pacotes_deb
 instalar_qogir_theme
