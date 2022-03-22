@@ -19,6 +19,7 @@ git clone https://github.com/ctrlpvim/ctrlp.vim
 git clone https://github.com/preservim/nerdcommenter
 git clone https://github.com/dense-analysis/ale
 git clone https://github.com/sheerun/vim-polyglot
+git clone https://github.com/jiangmiao/auto-pairs
 
 cd /home/$USER/.fonts
 
