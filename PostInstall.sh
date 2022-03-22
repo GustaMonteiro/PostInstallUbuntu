@@ -10,6 +10,8 @@ LISTA_PROGRAMAS_APT=(
 	curl
 	dconf-editor
 	gnome-tweaks
+	chrome-gnome-shell
+	grub-customizer
 )
 
 LISTA_PROGRAMAS_SNAP=(
