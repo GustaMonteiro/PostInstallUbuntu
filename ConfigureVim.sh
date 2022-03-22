@@ -5,7 +5,7 @@ DIRETORIO_COC="$HOME/.vim/pack/coc/start"
 DIRETORIO_FONTS="$HOME/.fonts"
 
 criar_diretorios () {
-    mkdir -p DIRETORIO_GIT_PLUGINS
+    mkdir -p $DIRETORIO_GIT_PLUGINS
     mkdir -p $DIRETORIO_COC
     mkdir $DIRETORIO_FONTS
 }
@@ -16,19 +16,19 @@ copiar_arquivos_configuracao () {
 }
 
 clonar_repositorios_git () {
-    git clone https://github.com/mhinz/vim-startify                -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/rafi/awesome-vim-colorschemes     -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/Yggdroot/indentLine               -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/preservim/nerdtree                -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/ryanoasis/vim-devicons            -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/vim-airline/vim-airline           -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/vim-airline/vim-airline-themes    -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/ctrlpvim/ctrlp.vim                -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/preservim/nerdcommenter           -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/dense-analysis/ale                -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/sheerun/vim-polyglot              -C $DIRETORIO_GIT_PLUGINS
-    git clone https://github.com/jiangmiao/auto-pairs              -C $DIRETORIO_GIT_PLUGINS
-    git clone --branch release https://github.com/neoclide/coc.nvim.git -C $DIRETORIO_COC --depth=1
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/mhinz/vim-startify
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/rafi/awesome-vim-colorschemes
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/Yggdroot/indentLine
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/preservim/nerdtree
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/ryanoasis/vim-devicons
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/vim-airline/vim-airline
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/vim-airline/vim-airline-themes
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/ctrlpvim/ctrlp.vim
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/preservim/nerdcommenter
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/dense-analysis/ale
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/sheerun/vim-polyglot
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/jiangmiao/auto-pairs
+    git -C $DIRETORIO_COC clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
 }
 
 criar_diretorios

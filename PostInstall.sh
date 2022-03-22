@@ -24,7 +24,7 @@ remover_locks () {
 }
 
 adicionar_arquitetura_i386 () {
-	sudo dpkg --add-architeture i386
+	sudo dpkg --add-architecture i386
 }
 
 atualizar_tudo () {
@@ -39,11 +39,6 @@ atualizar_tudo () {
 
 # }
 
-instalar_qogir_theme() {
-	git clone https://github.com/vinceliuice/Qogir-theme.git -C $DIRETORIO_DOWNLOADS
-	bash $DIRETORIO_DOWNLOADS/Qogir-theme/install.sh
-}
-
 baixar_pacotes_deb () {
 	[[ ! -d "$DIRETORIO_DOWNLOADS" ]] && mkdir "$DIRETORIO_DOWNLOADS"
 	wget "$URL_GOOGLE_CHROME" -P "$DIRETORIO_DOWNLOADS"
@@ -56,22 +51,19 @@ instalar_pacotes_deb () {
 
 instalar_pacotes_apt () {
 	for pacote in ${LISTA_PROGRAMAS_APT[@]}; do
-		if ! dpkg -l | grep -q $pacote; then
-			sudo apt install $pacote -y
-		else
-			echo "[INFO] - O pacote $pacote ja esta instalado"
-		fi
+		sudo apt install $pacote -y
 	done
 }
 
 instalar_pacotes_snap () {
 	for pacote in ${LISTA_PROGRAMAS_SNAP[@]}; do
-		if ! snap list | grep -q $pacote; then
-			sudo snap install $pacote
-		else
-			echo "[INFO] - O pacote $pacote ja esta instalado"
-		fi
+		sudo snap install $pacote
 	done
+}
+
+instalar_qogir_theme() {
+	git -C $DIRETORIO_DOWNLOADS clone https://github.com/vinceliuice/Qogir-theme.git
+	bash $DIRETORIO_DOWNLOADS/Qogir-theme/install.sh
 }
 
 remover_locks
