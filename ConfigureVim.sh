@@ -44,8 +44,4 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 source $HOME/.bashrc
 
-bash
-
-nvm install v13.6.0
-
 echo "To finish, close this terminal, open a new one and type 'nvm install v13.6.0'"

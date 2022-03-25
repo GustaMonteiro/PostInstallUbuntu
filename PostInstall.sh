@@ -15,6 +15,7 @@ LISTA_PROGRAMAS_APT=(
 	flatpak
 	gnome-software-plugin-flatpak
 	grub-customizer
+	exuberant-ctags
 )
 
 LISTA_PROGRAMAS_SNAP=(
@@ -119,5 +120,3 @@ instalar_pacotes_deb
 adicionar_repositorio_flatpak
 instalar_pacotes_flatpak
 instalar_qogir_theme
-
-reboot
