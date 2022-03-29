@@ -16,6 +16,7 @@ LISTA_PROGRAMAS_APT=(
 	gnome-software-plugin-flatpak
 	grub-customizer
 	exuberant-ctags
+  xclip
 )
 
 LISTA_PROGRAMAS_SNAP=(
