@@ -1,0 +1,10 @@
+
+vim.cmd("vmap ( xi()<Esc>P")
+vim.cmd("nmap ) ci(<Esc>Plxx")
+vim.cmd("vmap [ xi[]<Esc>P")
+vim.cmd("nmap ] ci[<Esc>Plxx")
+vim.cmd("vmap { xi{}<Esc>P")
+vim.cmd("nmap } ci{<Esc>Plxx")
+vim.cmd("vmap \" xi\"\"<Esc>P")
+vim.cmd("vmap \' xi\'\'<Esc>P")
+vim.cmd("nmap ; A;<Esc>")
