@@ -4,3 +4,30 @@ alias ct="xclip"
 alias mm="make main && ./main"
 alias mmi="make main && ./main < input"
 alias mmid="make main && ./main < input | diff -c - output"
+alias gemp="touch main.cpp input output"
+
+fc(){
+  if [ $# -eq 1 ]; then
+    local NOME_PROGRAMA=$1
+    make $NOME_PROGRAMA && ./$NOME_PROGRAMA
+  elif [ $# -eq 2 ]; then
+    local NOME_PROGRAMA=$1
+    local INPUT=$2
+    make $NOME_PROGRAMA && ./$NOME_PROGRAMA < $INPUT
+  elif [ $# -eq 3 ]; then
+    local NOME_PROGRAMA=$1
+    local INPUT=$2
+    local OUTPUT=$3
+    make $NOME_PROGRAMA && ./$NOME_PROGRAMA < $INPUT | diff -c - $OUTPUT
+  fi
+}
+
+fci(){
+  local NOME_PROGRAMA=$1
+  make $NOME_PROGRAMA && ./$NOME_PROGRAMA < input
+}
+
+fcid(){
+  local NOME_PROGRAMA=$1
+  make $NOME_PROGRAMA && ./$NOME_PROGRAMA < input | diff -c - output
+}
