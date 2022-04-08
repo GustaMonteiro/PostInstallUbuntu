@@ -3,6 +3,7 @@
 DIRETORIO_GIT_PLUGINS="$HOME/.vim/pack/git-plugins/start/"
 DIRETORIO_COC="$HOME/.vim/pack/coc/start"
 DIRETORIO_FONTS="$HOME/.fonts"
+DIRETORIO_VIMFILES="VimFiles"
 
 criar_diretorios () {
     mkdir -p $DIRETORIO_GIT_PLUGINS
@@ -11,14 +12,13 @@ criar_diretorios () {
 }
 
 copiar_arquivos_configuracao () {
-    cp .vimrc $HOME
-    cp coc.nvimrc $HOME/.vim
+    cp $DIRETORIO_VIMFILES/.vimrc $HOME
+    cp $DIRETORIO_VIMFILES/coc.nvimrc $HOME/.vim
 }
 
 clonar_repositorios_git () {
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/mhinz/vim-startify
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/rafi/awesome-vim-colorschemes
-    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/Yggdroot/indentLine
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/preservim/nerdtree
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/ryanoasis/vim-devicons
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/vim-airline/vim-airline
@@ -28,6 +28,7 @@ clonar_repositorios_git () {
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/dense-analysis/ale
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/sheerun/vim-polyglot
     git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/jiangmiao/auto-pairs
+    git -C $DIRETORIO_GIT_PLUGINS clone https://github.com/tomasiser/vim-code-dark.git 
     git -C $DIRETORIO_COC clone --branch release https://github.com/neoclide/coc.nvim.git --depth=1
 }
 

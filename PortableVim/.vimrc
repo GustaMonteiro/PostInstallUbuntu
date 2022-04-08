@@ -1,39 +1,45 @@
 syntax on
 
-colorscheme gruvbox
-set background=dark
+colorscheme codedark
+let g:airline_theme = 'codedark'
+
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
 set autoindent
 set smartindent
 set history=500
 set hidden
 set number
-set relativenumber
-set mouse=a
 set cursorline
+set mouse=a
 set clipboard=unnamedplus
 
 let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
-nnoremap <leader>ev :vsplit ~/.vimrc<cr>
-nnoremap <leader>sv :source ~/.vimrc<cr>
 nnoremap <leader>pf iprintf("Debug\n");<esc>
 nnoremap <leader>vs :vsplit<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>wq :wq<cr>
 
-let g:indentLine_enabled = 1
-map <c-k>i :IndentLinesToggle<cr>
+vmap ( xi()<Esc>P
+nmap ) ci(<Esc>Plxx
+vmap [ xi[]<Esc>P
+nmap ] ci[<Esc>Plxx
+vmap { xi{}<Esc>P
+nmap } ci{<Esc>Plxx
+vmap \" xi\"\"<Esc>P
+vmap \' xi\'\'<Esc>P
+nmap ; A;<Esc>
 
-map <C-n> :NERDTreeToggle<cr>
+map <leader>e :NERDTreeToggle<cr>
 set encoding=utf8
-set guifont=DroidSansMono\ Nerd\ Font\ Mono:h12
 
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
-let g:airline_theme='base16_twilight'
 
 let g:airline#extensions#tabline#formatter = 'default'
 " navegação entre os buffers
@@ -48,9 +54,7 @@ let g:ctrlp_show_hidden = 1
 filetype plugin on
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
-map cc <Plug>NERDCommenterInvert
+map gcc <Plug>NERDCommenterInvert
 
 let g:ale_linters = {'python': ['flake8', 'pylint'], 'javascript': ['eslint']}
 let g:ale_completion_enabled = 0
-
-source ~/.vim/coc.nvimrc
