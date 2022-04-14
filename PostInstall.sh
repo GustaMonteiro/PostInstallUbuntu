@@ -2,6 +2,10 @@
 
 DIRETORIO_DOWNLOADS="$HOME/Downloads/postinstallprograms"
 
+LISTA_PPAS=(
+  ppa:flatpak/stable
+)
+
 LISTA_PROGRAMAS_APT=(
 	gcc
 	git
@@ -21,7 +25,7 @@ LISTA_PROGRAMAS_APT=(
 
 LISTA_PROGRAMAS_SNAP=(
 	# spotify
-	notion-snap
+	# notion-snap
 	# photogimp
 )
 
@@ -42,6 +46,8 @@ LISTA_PROGRAMAS_FLATPAK=(
 	com.obsproject.Studio
 	com.visualstudio.code
 	org.gnome.gitlab.somas.Apostrophe
+	org.eclipse.Java
+	com.jetbrains.IntelliJ-IDEA-Community
 )
 
 remover_locks () {
@@ -53,6 +59,12 @@ adicionar_arquitetura_i386 () {
 	sudo dpkg --add-architecture i386
 }
 
+adicionar_ppas () {
+  for ppa in ${LISTA_PPAS[@]}; do
+    sudo add-apt-repository $ppa
+  done
+}
+
 atualizar_tudo () {
 	sudo apt update 
 	sudo apt upgrade -y
@@ -60,10 +72,6 @@ atualizar_tudo () {
 	sudo apt autoclean -y 
 	sudo apt autoremove -y
 }
-
-# adicionar_ppas () {
-
-# }
 
 baixar_pacotes_deb () {
 	[[ ! -d "$DIRETORIO_DOWNLOADS" ]] && mkdir "$DIRETORIO_DOWNLOADS"
@@ -112,6 +120,7 @@ instalar_qogir_theme() {
 
 remover_locks
 adicionar_arquitetura_i386
+adicionar_ppas
 atualizar_tudo
 instalar_pacotes_apt
 instalar_pacotes_snap
