@@ -11,9 +11,9 @@ LISTA_PROGRAMAS_APT=(
 	git
 	vim
 	curl
-	snapd
+	# snapd
 	wget
-	dconf-editor
+	# dconf-editor
 	gnome-tweaks
 	chrome-gnome-shell
 	flatpak
@@ -21,6 +21,8 @@ LISTA_PROGRAMAS_APT=(
 	grub-customizer
 	exuberant-ctags
   xclip
+	build-essential
+	default-jdk
 )
 
 LISTA_PROGRAMAS_SNAP=(
@@ -46,8 +48,11 @@ LISTA_PROGRAMAS_FLATPAK=(
 	com.obsproject.Studio
 	com.visualstudio.code
 	org.gnome.gitlab.somas.Apostrophe
+	io.dbeaver.DBeaverCommunity
+	org.gnome.Solanum
+	com.sublimetext.three
 	org.eclipse.Java
-	com.jetbrains.IntelliJ-IDEA-Community
+	# com.jetbrains.IntelliJ-IDEA-Community
 )
 
 remover_locks () {
@@ -123,10 +128,10 @@ adicionar_arquitetura_i386
 adicionar_ppas
 atualizar_tudo
 instalar_pacotes_apt
-instalar_pacotes_snap
-instalar_pacotes_snap_classic
+# instalar_pacotes_snap
+# instalar_pacotes_snap_classic
 baixar_pacotes_deb
 instalar_pacotes_deb
 adicionar_repositorio_flatpak
 instalar_pacotes_flatpak
-instalar_qogir_theme
+# instalar_qogir_theme
