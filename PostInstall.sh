@@ -11,9 +11,8 @@ LISTA_PROGRAMAS_APT=(
 	git
 	vim
 	curl
-	# snapd
 	wget
-	# dconf-editor
+	dconf-editor
 	gnome-tweaks
 	chrome-gnome-shell
 	flatpak
@@ -23,6 +22,7 @@ LISTA_PROGRAMAS_APT=(
   xclip
 	build-essential
 	default-jdk
+	tmux
 )
 
 LISTA_PROGRAMAS_SNAP=(
@@ -48,10 +48,10 @@ LISTA_PROGRAMAS_FLATPAK=(
 	com.obsproject.Studio
 	com.visualstudio.code
 	org.gnome.gitlab.somas.Apostrophe
-	io.dbeaver.DBeaverCommunity
+	# io.dbeaver.DBeaverCommunity
 	org.gnome.Solanum
 	com.sublimetext.three
-	org.eclipse.Java
+	# org.eclipse.Java
 	# com.jetbrains.IntelliJ-IDEA-Community
 )
 
@@ -134,4 +134,4 @@ baixar_pacotes_deb
 instalar_pacotes_deb
 adicionar_repositorio_flatpak
 instalar_pacotes_flatpak
-# instalar_qogir_theme
+instalar_qogir_theme
