@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIRETORIO_DOWNLOADS="$HOME/Downloads/postinstallprograms"
+DIRETORIO_DOWNLOADS="$HOME/Downloads/postinstall"
 
 mkdir -p $DIRETORIO_DOWNLOADS
 

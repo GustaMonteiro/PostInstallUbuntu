@@ -6,10 +6,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
-echo "zinit light zdharma/fast-syntax-highlighting" >> /home/$USER/.zshrc 
+echo "zinit light zdharma/fast-syntax-highlighting" >> $HOME/.zshrc 
 
-echo "zinit light zsh-users/zsh-autosuggestions" >> /home/$USER/.zshrc 
+echo "zinit light zsh-users/zsh-autosuggestions" >> $HOME/.zshrc 
 
-echo "zinit light zsh-users/zsh-completions" >> /home/$USER/.zshrc 
+echo "zinit light zsh-users/zsh-completions" >> $HOME/.zshrc 
 
 chsh -s $(which zsh)
