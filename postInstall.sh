@@ -23,6 +23,10 @@ LISTA_PROGRAMAS_APT=(
   build-essential
   default-jdk
   tmux
+  texlive
+  texmaker
+  texlive-lang-portuguese
+  geogebra
 )
 
 LISTA_PROGRAMAS_SNAP=(
