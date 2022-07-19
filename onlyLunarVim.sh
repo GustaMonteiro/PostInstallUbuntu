@@ -30,6 +30,21 @@ LISTA_PROGRAMAS_APT=(
   cargo
 )
 
+LISTA_MAPPINGS=(
+  "vim.cmd(\"vmap ( xi()<Esc>P\")" 
+  "vim.cmd(\"nmap ) ci(<Esc>Plxx\")"
+  "vim.cmd(\"vmap [ xi[]<Esc>P\")"
+  "vim.cmd(\"nmap ] ci[<Esc>Plxx\")"
+  "vim.cmd(\"vmap { xi{}<Esc>P\")"
+  "vim.cmd(\"nmap } ci{<Esc>Plxx\")"
+  "vim.cmd(\"vmap \\\" xi\\\"\\\"<Esc>P\")"
+  "vim.cmd(\"vmap \' xi\'\'<Esc>P\")"
+  "vim.cmd(\"nmap ; A;<Esc>\")"
+  "vim.cmd(\"nmap <M-Right> :bn<cr>\")"
+  "vim.cmd(\"nmap <M-Left> :bp<cr>\")"
+  "vim.cmd(\"nmap <c-x> :BufferKill<cr>\")"
+)
+
 atualizar_tudo () {
   sudo apt update 
   sudo apt upgrade -y
@@ -64,9 +79,17 @@ instalar () {
   sudo make install
   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
   echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.zshrc
+  echo "export PATH=$PATH:$HOME/.local/bin" >> $HOME/.bashrc
+}
+
+escrever_mappings () {
+  for mapping in "${LISTA_MAPPINGS[@]}"; do
+    echo $mapping >> $HOME/.config/lvim/config.lua
+  done
 }
 
 atualizar_tudo
 instalar_pacotes_apt
 instalar_fonte
 instalar
+escrever_mappings
