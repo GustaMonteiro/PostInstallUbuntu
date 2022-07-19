@@ -1,8 +1,10 @@
 #!/bin/bash
 
 DIRETORIO_DOWNLOADS="$HOME/Downloads/postinstall"
+DIRETORIO_FONTS="$HOME/.fonts"
 
 mkdir -p $DIRETORIO_DOWNLOADS
+mkdir $DIRETORIO_FONTS
 
 LISTA_PROGRAMAS_APT=(
   gcc
@@ -40,6 +42,11 @@ instalar_pacotes_apt () {
   sudo apt install ${LISTA_PROGRAMAS_APT[@]} -y
 }
 
+instalar_fonte () {
+  wget -c https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete%20Mono.otf -P $DIRETORIO_FONTS
+  fc-cache
+}
+
 instalar () {
   curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -61,4 +68,5 @@ instalar () {
 
 atualizar_tudo
 instalar_pacotes_apt
+instalar_fonte
 instalar
